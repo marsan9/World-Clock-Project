@@ -20,6 +20,39 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let newYorkElement = document.querySelector("#new-york");
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tz("America/New_York");
+    newYorkDateElement.innerHTML = newYorkTime.format("MMMM D, YYYY");
+    newYorkTimeElement.innerHTML = newYorkTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let parisTime = moment().tz("Europe/Paris");
+    parisDateElement.innerHTML = parisTime.format("MMMM D, YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
+    tokyoDateElement.innerHTML = tokyoTime.format("MMMM D, YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 function updateCity(event) {
   let cityTimezone = event.target.value;
